@@ -85,5 +85,22 @@ export const buildPRDescription = (details: JIRADetails) => {
   </tr>
 </table>
 <br />
+<details open>
+  <summary><a href="${details.url}" title="${displayKey}" target="_blank">${displayKey}</a></summary>
+  <br />
+  <table>
+    <tr>
+      <th>Summary</th>
+      <td>${details.summary}</td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td>
+        <img alt="${details.type.name}" src="${details.type.icon}" />
+        ${details.type.name}
+      </td>
+    </tr>
+  </table>
+</details>
 `;
 };
