@@ -60,8 +60,6 @@ export const getPRDescription = (oldBody: string, details: string): string => {
   const rg = new RegExp(`${hiddenMarkerStartRg}([\\s\\S]+)${hiddenMarkerEndRg}`, 'igm');
   const bodyWithoutJiraDetails = (oldBody ?? '').replace(rg, '');
 
-  console.log(`new ticket details: ${details}`);
-
   return `${WARNING_MESSAGE_ABOUT_HIDDEN_MARKERS}
 ${HIDDEN_MARKER_START}
 ${details}
