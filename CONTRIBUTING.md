@@ -1,0 +1,3 @@
+# Contributing
+
+Make sure to build the project (`npm run build`) before submitting a new PR to master, or else the new changes may not be adopted. GitHub Actions are set up to do this automatically, but may fail for a variety of reasons: they are disabled by default when forking, one of the dependencies is no longer supported...
