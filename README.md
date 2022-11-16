@@ -30,6 +30,7 @@ jobs:
           skip-branches: '^(production-release|main|master|release\/v\d+)$' # optional
           custom-issue-number-regexp: '^\d+' #o ptional
           jira-project-key: 'PRJ' # optional
+          format: 'collapsible' # optional
 ```
 `
 ## Features
@@ -47,6 +48,7 @@ When a PR passes the above check, `jira-issue-in-description-action` will also a
 | `jira-project-key`     | Key of project in Jira. First part of issue key | false    | none     |
 | `custom-issue-number-regexp` | Custom regexp to extract issue number from branch name. If not specified, default regexp would be used.  | false    | none     |
 | `fail-when-jira-issue-not-found` | Should action fail if Jira issue is not found in Jira  | false    | false     |
+| `format` | The output format. Can be `collapsible` or `tiny`. See the illustration for the examples of each.  | false    | 'tiny'     |
 
 Tokens are private, so it's suggested adding them as [GitHub secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets).
 
