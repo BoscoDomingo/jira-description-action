@@ -10,6 +10,7 @@ export const getInputs = (): IActionInputs => {
   const JIRA_PROJECT_KEY = core.getInput('jira-project-key', { required: false });
   const FAIL_WHEN_JIRA_ISSUE_NOT_FOUND = core.getInput('fail-when-jira-issue-not-found', { required: false }) === 'true' || false;
   const WHAT_TO_USE: ESource = (core.getInput('use', { required: false }) as ESource) || ESource.both;
+  const FORMAT: string = core.getInput('format', { required: false }) || 'tiny';
   return {
     JIRA_TOKEN,
     GITHUB_TOKEN,
@@ -19,5 +20,6 @@ export const getInputs = (): IActionInputs => {
     CUSTOM_ISSUE_NUMBER_REGEXP,
     FAIL_WHEN_JIRA_ISSUE_NOT_FOUND,
     JIRA_BASE_URL: JIRA_BASE_URL.endsWith('/') ? JIRA_BASE_URL.replace(/\/$/, '') : JIRA_BASE_URL,
+    FORMAT,
   };
 };

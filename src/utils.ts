@@ -7,6 +7,7 @@ import {
   WARNING_MESSAGE_ABOUT_HIDDEN_MARKERS,
 } from './constants';
 import { JIRADetails } from './types';
+import { getInputs } from './action-inputs';
 
 const getJIRAIssueKey = (input: string, regexp: RegExp = JIRA_REGEX_MATCHER): string | null => {
   const matches = regexp.exec(input);
@@ -69,24 +70,11 @@ ${bodyWithoutJiraDetails}`;
 
 export const buildPRDescription = (details: JIRADetails) => {
   const displayKey = details.key.toUpperCase();
-  return `
-<table>
-  <tr>
-    <th>Type</th>
-    <th>Issue</th>
-    <th>Title</th>
-  </tr>
-  <tr>
-    <td>${details.type.name}</td>
-    <td>
-      <a href="${details.url}" title="${displayKey}" target="_blank"><img alt="${details.type.name}" src="${details.type.icon}">${displayKey}</a>
-    </td>
-    <td>${details.summary}</td>
-  </tr>
-</table>
-<br />
-<br/>
-<details open>
+  const format: string = getInputs().FORMAT;
+  switch (format) {
+    case 'collapsible':
+      return `
+  <details open>
   <summary><a href="${details.url}" title="${displayKey}" target="_blank">${displayKey}</a></summary>
   <br />
   <table>
@@ -104,4 +92,21 @@ export const buildPRDescription = (details: JIRADetails) => {
   </table>
 </details>
 `;
+    default:
+      return `
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Issue</th>
+    <th>Title</th>
+  </tr>
+  <tr>
+    <td>${details.type.name}</td>
+    <td>
+      <a href="${details.url}" title="${displayKey}" target="_blank"><img alt="${details.type.name}" src="${details.type.icon}">${displayKey}</a>
+    </td>
+    <td>${details.summary}</td>
+  </tr>
+</table>`;
+  }
 };
