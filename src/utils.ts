@@ -74,7 +74,7 @@ export const buildPRDescription = (details: JIRADetails) => {
   <tr>
     <th>Type</th>
     <th>Issue</th>
-    <th>Description</th>
+    <th>Title</th>
   </tr>
   <tr>
     <td>${details.type.name}</td>
