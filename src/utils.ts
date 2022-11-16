@@ -79,12 +79,13 @@ export const buildPRDescription = (details: JIRADetails) => {
   <tr>
     <td>${details.type.name}</td>
     <td>
-      <a href="${details.url}" title="${displayKey}" target="_blank"><img alt="${details.type.name}" src="${details.type.icon}" />${displayKey}</a>
+      <a href="${details.url}" title="${displayKey}" target="_blank"><img alt="${details.type.name}" src="${details.type.icon}">${displayKey}</a>
     </td>
     <td>${details.summary}</td>
   </tr>
 </table>
 <br />
+<br/>
 <details open>
   <summary><a href="${details.url}" title="${displayKey}" target="_blank">${displayKey}</a></summary>
   <br />

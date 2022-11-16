@@ -16,3 +16,4 @@ node_modules
 .npm
 
 coverage
+.DS_Store
