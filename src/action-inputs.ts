@@ -9,7 +9,7 @@ export const getInputs = (): IActionInputs => {
   const CUSTOM_ISSUE_NUMBER_REGEXP = core.getInput('custom-issue-number-regexp', { required: false });
   const JIRA_PROJECT_KEY = core.getInput('jira-project-key', { required: false });
   const FAIL_WHEN_JIRA_ISSUE_NOT_FOUND = core.getInput('fail-when-jira-issue-not-found', { required: false }) === 'true' || false;
-  const WHAT_TO_USE: ESource = (core.getInput('use', { required: false }) as ESource) || ESource.prTitle;
+  const WHAT_TO_USE: ESource = (core.getInput('use', { required: false }) as ESource) || ESource.both;
   return {
     JIRA_TOKEN,
     GITHUB_TOKEN,
