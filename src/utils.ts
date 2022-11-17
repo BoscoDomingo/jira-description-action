@@ -77,7 +77,7 @@ export const buildPRDescription = (details: JIRADetails) => {
   <details open>
   <summary><a href="${details.url}" title="${displayKey}" target="_blank">${displayKey}</a></summary>
   <br />
-  <table>
+  <table style="margin-left: auto;margin-right: auto;">
     <tr>
       <th>Summary</th>
       <td>${details.summary}</td>
@@ -94,7 +94,7 @@ export const buildPRDescription = (details: JIRADetails) => {
 `;
     default:
       return `
-<table>
+<table style="margin-left: auto;margin-right: auto;">
   <tr>
     <th>Type</th>
     <th>Issue</th>
