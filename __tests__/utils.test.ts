@@ -68,6 +68,7 @@ describe('getPRDescription()', () => {
 ${HIDDEN_MARKER_START}
 ${issueInfo}
 ${HIDDEN_MARKER_END}
+
 ${oldPRBody}`);
   });
 
@@ -82,6 +83,7 @@ ${oldPRBody}`);
 ${HIDDEN_MARKER_START}
 ${issueInfo}
 ${HIDDEN_MARKER_END}
+
 ${oldPRBodyInformation}`);
   });
 });
