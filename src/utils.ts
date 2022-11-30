@@ -65,6 +65,7 @@ export const getPRDescription = (oldBody: string, details: string): string => {
 ${HIDDEN_MARKER_START}
 ${details}
 ${HIDDEN_MARKER_END}
+
 ${bodyWithoutJiraDetails}`;
 };
 
@@ -91,6 +92,7 @@ export const buildPRDescription = (details: JIRADetails) => {
     </tr>
   </table>
 </details>
+
 `;
     default:
       return `
@@ -107,6 +109,8 @@ export const buildPRDescription = (details: JIRADetails) => {
     </td>
     <td>${details.summary}</td>
   </tr>
-</table>`;
+</table>
+
+`;
   }
 };
