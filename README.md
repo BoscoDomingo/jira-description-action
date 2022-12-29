@@ -21,7 +21,7 @@ jobs:
   add-jira-description:
     runs-on: ubuntu-latest
     steps:
-      - uses: BoscoDomingo/jira-issue-in-description-action@main #v0.5.1
+      - uses: BoscoDomingo/jira-issue-in-description-action@main #v1.1
         name: jira-issue-in-description-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
