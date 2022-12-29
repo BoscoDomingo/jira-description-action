@@ -10,7 +10,7 @@ Forked from https://github.com/cakeinpanic/jira-description-action
 To make `jira-issue-in-description-action` a part of your workflow, just add a `jira-issue-in-description-action.yml` file in your `.github/workflows/` directory in your GitHub repository.
 
 > **Note**
-> This action fetches PR description and does not take it form context. So if you are chainign few actions which work with PR description, put this one as the last one
+> This action fetches PR description and does not take it form context. So if you are chaining a few actions which work with PR description, put this one as the last one
 
 ```yml
 name: jira-issue-in-description-action
@@ -21,7 +21,7 @@ jobs:
   add-jira-description:
     runs-on: ubuntu-latest
     steps:
-      - uses: BoscoDomingo/jira-issue-in-description-action@main #v1.1
+      - uses: BoscoDomingo/jira-issue-in-description-action@main #v1.1.1
         name: jira-issue-in-description-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

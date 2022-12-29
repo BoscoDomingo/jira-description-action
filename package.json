@@ -1,6 +1,6 @@
 {
   "name": "jira-issue-in-description-action",
-  "version": "0.4.2",
+  "version": "1.1.1",
   "description": "Add JIRA issue details to your GitHub pull request",
   "main": "lib/index.js",
   "scripts": {
